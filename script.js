@@ -16,16 +16,21 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (inputNumber === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number';
     document.querySelector('.number').textContent = secretNumber;
-    document.getElementById('body').style.backgroundColor = '#60b347';
-    document.getElementById('.body').style.width = '30rem';
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+    // let Hscore = Number(document.querySelector('.score').innerText);
 
-    if (score > highscore) {
-      highscore = score;
-      document.querySelector('.highscore').textContent = highscore;
-    }
+    // if (Hscore > highscore) {
+    //     document.querySelector('#highscore').textContent = Hscore;
+    // }
+    // if (score > highscore) {
+    //     highscore = score;
+    //     document.querySelector('#highscore').textContent = highscore;
+    //   }
+  
   } else if (inputNumber !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.score').textContent =
+      document.querySelector('.message').textContent =
         inputNumber > secretNumber ? 'Too High ' : 'Too Low';
       score--;
       document.querySelector('.score').textContent = score;
@@ -46,5 +51,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
 
   document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('number').style.width = '15rem';
+  document.querySelector('.number').style.width = '15rem';
 });
